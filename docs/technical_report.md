@@ -14,7 +14,7 @@ The analysis in this repository uses:
 
 Dataset used during execution:
 
-- `/tmp/workspace/Faus7679/BenchmarkDataMiningClassification/data/LoanDataSet.csv`
+- `C:\Users\Yawo Faustin AZIAKPO\Downloads\LoanDataSet.csv`
 
 ---
 
