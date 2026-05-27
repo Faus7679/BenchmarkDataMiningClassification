@@ -259,20 +259,20 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from scipy.stats import binomtest
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import (
+from sklearn.compose import ColumnTransformer  # type: ignore[import]
+from sklearn.impute import SimpleImputer  # type: ignore[import]
+from sklearn.linear_model import LogisticRegression  # type: ignore[import]
+from sklearn.metrics import (  # type: ignore[import]
     ConfusionMatrixDisplay,
     accuracy_score,
     confusion_matrix,
     roc_auc_score,
     roc_curve,
 )
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.model_selection import train_test_split  # type: ignore[import]
+from sklearn.neighbors import KNeighborsClassifier  # type: ignore[import]
+from sklearn.pipeline import Pipeline  # type: ignore[import]
+from sklearn.preprocessing import OneHotEncoder, StandardScaler  # type: ignore[import]
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
