@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from textwrap import dedent
+from typing import TypeAlias
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -33,6 +34,13 @@ OUTPUT_DIR = REPO_ROOT / "docs"
 PLOTS_DIR = OUTPUT_DIR / "plots"
 RANDOM_STATE = 42
 TEST_SIZE = 0.20
+RocArtifact: TypeAlias = tuple[np.ndarray, np.ndarray, float]
+EvaluationArtifacts: TypeAlias = tuple[
+    pd.DataFrame,
+    dict[str, np.ndarray],
+    dict[str, RocArtifact],
+    dict[str, np.ndarray],
+]
 
 
 def resolve_dataset_path() -> Path:
@@ -201,7 +209,7 @@ def evaluate_models(
     target_train: pd.Series,
     target_test: pd.Series,
     preprocessor: ColumnTransformer,
-) -> tuple[pd.DataFrame, dict[str, np.ndarray], dict[str, tuple[np.ndarray, np.ndarray, float]], dict[str, np.ndarray]]:
+) -> EvaluationArtifacts:
     model_candidates = {
         "Logistic Regression": LogisticRegression(
             max_iter=2000,
@@ -212,7 +220,7 @@ def evaluate_models(
 
     metrics_rows: list[dict[str, float | str]] = []
     confusion_matrices: dict[str, np.ndarray] = {}
-    roc_artifacts: dict[str, tuple[np.ndarray, np.ndarray, float]] = {}
+    roc_artifacts: dict[str, RocArtifact] = {}
     predictions: dict[str, np.ndarray] = {}
 
     for model_name, estimator in model_candidates.items():

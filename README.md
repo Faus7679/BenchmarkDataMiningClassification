@@ -4,11 +4,11 @@ This repository contains a reproducible loan-status classification workflow and 
 
 ## Files
 
-- `/tmp/workspace/Faus7679/BenchmarkDataMiningClassification/analysis/loan_status_analysis.py` - end-to-end analysis script
-- `/tmp/workspace/Faus7679/BenchmarkDataMiningClassification/data/LoanDataSet.csv` - local dataset copy for offline execution
-- `/tmp/workspace/Faus7679/BenchmarkDataMiningClassification/docs/technical_report.md` - comprehensive markdown report
-- `/tmp/workspace/Faus7679/BenchmarkDataMiningClassification/docs/plots/` - generated plots used in the report
-- `/tmp/workspace/Faus7679/BenchmarkDataMiningClassification/requirements.txt` - Python dependencies
+- `analysis/loan_status_analysis.py` - end-to-end analysis script
+- `data/LoanDataSet.csv` - local dataset copy for offline execution
+- `docs/technical_report.md` - comprehensive markdown report
+- `docs/plots/` - generated plots used in the report
+- `requirements.txt` - Python dependencies
 
 ## How to run the project
 
@@ -16,15 +16,15 @@ This repository contains a reproducible loan-status classification workflow and 
 2. Install dependencies:
 
    ```bash
-   python -m pip install -r /tmp/workspace/Faus7679/BenchmarkDataMiningClassification/requirements.txt
+   python -m pip install -r requirements.txt
    ```
 
 3. Put `LoanDataSet.csv` in `~/Downloads/LoanDataSet.csv` if you want to use your own download.
-   - If that file is not present, the script automatically falls back to `/tmp/workspace/Faus7679/BenchmarkDataMiningClassification/data/LoanDataSet.csv`.
+   - If that file is not present, the script automatically falls back to `data/LoanDataSet.csv`.
 4. Run the analysis:
 
    ```bash
-   python /tmp/workspace/Faus7679/BenchmarkDataMiningClassification/analysis/loan_status_analysis.py
+   python analysis/loan_status_analysis.py
    ```
 
 ## What the script does
@@ -43,7 +43,7 @@ This repository contains a reproducible loan-status classification workflow and 
    - k-nearest neighbors.
 7. Generates predictions, confusion matrices, ROC curves, accuracy, sensitivity, specificity, and ROC AUC.
 8. Runs an exact McNemar comparison between the two models.
-9. Writes the markdown report and plot images into `/tmp/workspace/Faus7679/BenchmarkDataMiningClassification/docs/`.
+9. Writes the markdown report and plot images into `docs/`.
 
 ## Assignment coverage
 
